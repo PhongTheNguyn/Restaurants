@@ -47,7 +47,7 @@
                         <td><?php echo $order->phone_number; ?></td>
                         <td><?php echo $order->address; ?></td>
                         <td><?php echo $order->detail; ?></td>
-                        <td><?php echo $order->total_price; ?></td>
+                        <td><?php echo number_format($order->total_price); ?></td>
                         <td><?php echo $order->status; ?></td>
 
                     </tr>

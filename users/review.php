@@ -47,8 +47,8 @@
                 </div>
                 <div class="col-md-6 bg-dark d-flex align-items-center">
                 <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Đặt bàn</h5>
-                        <h1 class="text-white mb-4">Đặt bàn</h1>
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Đánh giá</h5>
+                        <h1 class="text-white mb-4">Đánh giá</h1>
                         <form method="POST" action="review.php">
                             <div class="row g-3">
                                 <div class="col-12">

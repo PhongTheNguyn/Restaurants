@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
     $path = "http://localhost/restaurants";
 
     try {
-        $app->login($query, $data, $path);
+        $app->loginUser($query, $data, $path);
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }

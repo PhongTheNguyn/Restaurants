@@ -13,10 +13,7 @@
 <?php
 
 
-        $query = "DELETE FROM cart WHERE user_id = '$_SESSION[user_id]'";
-        $app = new App;
-        $path = "cart.php";
-        $app->delete($query, $path);
-    
+$user_id = $_SESSION["user_id"];
+$app->insert("DELETE FROM cart WHERE user_id = :user_id", [':user_id' => $user_id], null);
 
 ?>

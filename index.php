@@ -18,6 +18,10 @@
     $query = "SELECT * FROM foods WHERE meal_id='3'";
     $app = new App;
     $meal_3 = $app->selectAll($query);
+
+    $query = "SELECT * FROM reviews";
+    $app = new App;
+    $reviews = $app->selectAll($query);
 ?>
 
             <div class="container-fluid py-5 bg-dark hero-header mb-5">
@@ -156,22 +160,20 @@
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
-                                <?php foreach($meal_1 as $meal_1): ?>
-
-                               
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center">
-                                        <img class="flex-shrink-0 img-fluid rounded" src="img/<?php echo $meal_1->image;?>" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span><?php echo $meal_1->name;?></span>
-                                                <span class="text-primary"><?php echo $meal_1->price;?></span>
-                                            </h5>
-                                            <small class="fst-italic"><?php echo $meal_1->description;?></small>
-                                            <a type="button" href="<?php echo APPURL ?>/food/add-cart.php?id=<?php echo $meal_1->id; ?>" class="btn btn-primary py-2 top-0 end-0 mt-2 me-2">view</a>
+                                <?php foreach($meal_1 as $meal_1): ?>                              
+                                    <div class="col-lg-6">
+                                        <div class="d-flex align-items-center">
+                                            <img class="flex-shrink-0 img-fluid rounded" src="<?php echo APPIMG;?>/<?php echo $meal_1->image;?>" alt="" style="width: 80px;">
+                                            <div class="w-100 d-flex flex-column text-start ps-4">
+                                                <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                        <span><?php echo $meal_1->name; ?></span>
+                                                        <span class="text-primary"><?php echo number_format($meal_1->price); ?> VNĐ</span>
+                                                </h5>
+                                                <small class="fst-italic"><?php echo $meal_1->description;?></small>
+                                                <a type="button" href="<?php echo APPURL ?>/food/add-cart.php?id=<?php echo $meal_1->id; ?>" class="btn btn-primary py-2 top-0 end-0 mt-2 me-2">view</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -180,11 +182,11 @@
                                 <?php foreach($meal_2 as $meal_2): ?>
                                     <div class="col-lg-6">
                                         <div class="d-flex align-items-center">
-                                            <img class="flex-shrink-0 img-fluid rounded" src="img/<?php echo $meal_2->image;?>" alt="" style="width: 80px;">
+                                            <img class="flex-shrink-0 img-fluid rounded" src="<?php echo APPIMG;?>/<?php echo $meal_2->image;?>" alt="" style="width: 80px;">
                                             <div class="w-100 d-flex flex-column text-start ps-4">
                                                 <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                    <span><?php echo $meal_2->name;?></span>
-                                                    <span class="text-primary"><?php echo $meal_2->price;?></span>
+                                                    <span><?php echo $meal_2->name; ?></span>
+                                                    <span class="text-primary"><?php echo number_format($meal_2->price); ?> VNĐ</span>
                                                 </h5>
                                                 <small class="fst-italic"><?php echo $meal_2->description;?></small>
                                                 <a type="button" href="<?php echo APPURL ?>/food/add-cart.php?id=<?php echo $meal_2->id; ?>" class="btn btn-primary py-2 top-0 end-0 mt-2 me-2">view</a>
@@ -199,11 +201,11 @@
                             <?php foreach($meal_3 as $meal_3): ?>
                                     <div class="col-lg-6">
                                         <div class="d-flex align-items-center">
-                                            <img class="flex-shrink-0 img-fluid rounded" src="img/<?php echo $meal_3->image;?>" alt="" style="width: 80px;">
+                                            <img class="flex-shrink-0 img-fluid rounded" src="<?php echo APPIMG;?>/<?php echo $meal_3->image;?>" alt="" style="width: 80px;">
                                             <div class="w-100 d-flex flex-column text-start ps-4">
                                                 <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                    <span><?php echo $meal_3->name;?></span>
-                                                    <span class="text-primary"><?php echo $meal_3->price;?></span>
+                                                    <span><?php echo $meal_3->name; ?></span>
+                                                    <span class="text-primary"><?php echo number_format($meal_3->price); ?> VNĐ</span>
                                                 </h5>
                                                 <small class="fst-italic"><?php echo $meal_3->description;?></small>
                                                 <a type="button" href="<?php echo APPURL ?>/food/add-cart.php?id=<?php echo $meal_3->id; ?>" class="btn btn-primary py-2 top-0 end-0 mt-2 me-2">view</a>
@@ -362,50 +364,21 @@
                     <h1 class="mb-5">Our Clients Say!!!</h1>
                 </div>
                 <div class="owl-carousel testimonial-carousel">
+                    <?php foreach($reviews as $review): ?>
                     <div class="testimonial-item bg-transparent border rounded p-4">
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <p>
+                            <?php echo $review->review;?>
+                        </p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;">
+                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;"> -->
                             <div class="ps-3">
-                                <h5 class="mb-1">Client Name</h5>
-                                <small>Profession</small>
+                                <h5 class="mb-1"><?php echo $review->username;?></h5>
+                                <small>Khách hàng thân thiết</small>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Client Name</h5>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Client Name</h5>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded p-4">
-                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h5 class="mb-1">Client Name</h5>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

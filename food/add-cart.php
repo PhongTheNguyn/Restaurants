@@ -3,6 +3,9 @@
 <?php require (__DIR__ ."/../includes/header.php"); ?>
 <?php 
 
+$success = false;
+
+
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
     $query = "SELECT * FROM foods WHERE id = '$id'";
@@ -19,32 +22,52 @@ if(isset($_GET['id'])) {
 
     }
 
-
+    
     if(isset($_POST["submit"])) {
         $item_id = $_POST["item_id"];
         $name = $_POST["name"];
         $price = $_POST["price"];
         $image = $_POST["image"];
         $user_id = $_SESSION["user_id"];
+        $quantity = isset($_POST["quantity"]) ? intval($_POST["quantity"]) : 1;
 
+        // Kiểm tra xem món đã có trong giỏ chưa
+        $cart_item = $app->selectOne(
+            "SELECT * FROM cart WHERE item_id = :item_id AND user_id = :user_id",
+            [':item_id' => $item_id, ':user_id' => $user_id]
+        );
 
-        $query = "INSERT INTO cart (item_id, name, price, image, user_id) VALUES (:item_id, :name, :price, :image, :user_id)";
-        $arr = [
-            ":item_id" => $item_id,
-            ":name"=> $name,
-            ":price"=> $price,
-            "image"=> $image,
-            "user_id"=> $user_id,
-        ];
-
-        $path = "cart.php";
-
-
-        $app->insert( query: $query, arr: $arr, path: $path); 
-    }      
+        if ($cart_item) {
+            // Nếu đã có, cập nhật số lượng
+            $new_quantity = $cart_item->quantity + $quantity;
+            $app->insert(
+                "UPDATE cart SET quantity = :quantity WHERE item_id = :item_id AND user_id = :user_id",
+                [
+                    ':quantity' => $new_quantity,
+                    ':item_id' => $item_id,
+                    ':user_id' => $user_id
+                ],
+                null
+            );
+            $success = true;
+        } else {
+            // Nếu chưa có, thêm mới
+            $query = "INSERT INTO cart (item_id, name, price, image, user_id, quantity) VALUES (:item_id, :name, :price, :image, :user_id, :quantity)";
+            $arr = [
+                ":item_id" => $item_id,
+                ":name"=> $name,
+                ":price"=> $price,
+                ":image"=> $image,
+                ":user_id"=> $user_id,
+                ":quantity"=> $quantity
+            ];
+            $app->insert($query, $arr, null);
+            $success = true;
+        }
+    }
 
 }  else{
-echo "<script>window.location.href='".APPURL."/404.php'</script>";
+    echo "<script>window.location.href='".APPURL."/404.php'</script>";
 }
 
 
@@ -64,11 +87,14 @@ echo "<script>window.location.href='".APPURL."/404.php'</script>";
 
 <div class="container-fluid py-5">
     <div class="container">
+        <?php if ($success): ?>
+            <div class="alert alert-success mt-3">Đã thêm vào giỏ hàng!</div>
+        <?php endif; ?>
         <div class="row g-5 align-item-center">
             <div class="col-md-6">
                 <div class="row g-3">
                     <div class="col-12 text-start">
-                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="<?php echo APPURL; ?>/img/<?php echo $one->image;?>" >
+                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="<?php echo APPIMG;?>/<?php echo $one->image;?>" >
                     </div>
                 </div>
             </div>
@@ -80,7 +106,7 @@ echo "<script>window.location.href='".APPURL."/404.php'</script>";
                 <div class="row g-4 mb-4">
                     <div class="col-sm-6">
                         <div class="d-flex align-item-center border-start border-5 border-primary px-3">
-                            <h3>Price: <?php echo $one->price;?> VNĐ</h3>
+                            <h3>Price: <?php echo number_format($one->price);?> VNĐ</h3>
                         </div>
                     </div>
                 </div>
@@ -89,10 +115,14 @@ echo "<script>window.location.href='".APPURL."/404.php'</script>";
                     <input type="hidden" name="name" value="<?php echo $one->name;?>">
                     <input type="hidden" name="image" value="<?php echo $one->image;?>">
                     <input type="hidden" name="price" value="<?php echo $one->price;?>">
-                    <?php if($count > 0) : ?>
-                        <button name="submit" type="submit" class="btn btn-primary py-3 px-5 mt-2" disabled>Đã được thêm vào giỏ </button>
-                    <?php else: ?>
+                    <div class="mb-3">
+                        <label for="quantity">Số lượng:</label>
+                        <input type="number" name="quantity" id="quantity" class="form-control w-25 d-inline" value="1" min="1" required>
+                    </div>
+                    <?php if(isset($_SESSION['user_id'])): ?>
                         <button name="submit" type="submit" class="btn btn-primary py-3 px-5 mt-2">Thêm vào giỏ</button>
+                    <?php else: ?>
+                        <a href="<?php echo APPURL;?>/auth/login.php" class="btn btn-primary py-3 px-5 mt-2">Đăng nhập để thêm vào giỏ</a>
                     <?php endif; ?>
                 </form>
             </div>

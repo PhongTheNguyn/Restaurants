@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, "Segoe UI";
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.mt-100{
+    margin-top: 100px;
+}

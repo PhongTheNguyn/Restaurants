@@ -31,29 +31,23 @@
 
         //selecta all
 
-        public function selectAll($query) {
-            $rows = $this->pdo->query($query);
-            $rows->execute();
-
-            $allRows = $rows->fetchAll(PDO::FETCH_OBJ);
-
-            if ($allRows) {
-                return $allRows;
-            } else {
-                return false;
+        public function selectAll($query, $params = []) {
+            try {
+                $stmt = $this->pdo->prepare($query);
+                $stmt->execute($params);
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
+            } catch (PDOException $e) {
+                throw new Exception("Database error: " . $e->getMessage());
             }
         }
 
-        public function selectOne($query) {
-            $rows = $this->pdo->query($query);
-            $rows->execute();
-
-            $singleRows = $rows->fetch(PDO::FETCH_OBJ);
-
-            if ($singleRows) {
-                return $singleRows;
-            } else {
-                return false;
+        public function selectOne($query, $params = []) {
+            try {
+                $stmt = $this->pdo->prepare($query);
+                $stmt->execute($params);
+                return $stmt->fetch(PDO::FETCH_OBJ);
+            } catch (PDOException $e) {
+                throw new Exception("Database error: " . $e->getMessage());
             }
         }
 
@@ -121,27 +115,53 @@
 
 
 
-        public function login($query, $data, $path) {
+        
+        public function loginUser($query, $data, $path) {
             try {
                 $stmt = $this->pdo->prepare($query);
                 $stmt->execute([':email' => $data[':email']]);
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+            
                 if ($user && password_verify($data[':password'], $user['password'])) {
-                    // Start session and set session variables
-
-                    $_SESSION['username'] = $user['username'];
-                    $_SESSION['email'] = $user['email'];
+                    // Lưu session riêng cho user
                     $_SESSION['user_id'] = $user['id'];
-                    echo "<script>window.location.href='".$path."'</script>" ;
+                    $_SESSION['user_email'] = $user['email'];
+                    $_SESSION['username'] = $user['username'];
+                
+                    // Chuyển hướng đến trang user
+                    echo "<script>window.location.href='" . $path . "'</script>";
                     exit();
                 } else {
-                    echo "Invalid email or password";
+                    echo "<script>alert('Email hoặc mật khẩu không đúng.');</script>";
                 }
             } catch (PDOException $e) {
                 throw new Exception("Database error: " . $e->getMessage());
             }
         }
+
+
+        
+        public function loginAdmin($query, $data, $path) {
+    try {
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute([':email' => $data[':email']]);
+        $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($admin && password_verify($data[':password'], $admin['password'])) {
+            $_SESSION['admin_name'] = $admin['admin_name'];
+            $_SESSION['email'] = $admin['email']; // dùng tên riêng biệt
+
+            echo "<script>window.location.href='".$path."'</script>";
+            exit();
+        } else {
+            echo "Invalid email or password";
+        }
+    } catch (PDOException $e) {
+        throw new Exception("Database error: " . $e->getMessage());
+    }
+}
+    
+
 
         //starting session
         public function startingSession() {
@@ -154,6 +174,25 @@
                 echo "<script>window.location.href='".APPURL."'</script>";
             } 
         }
-    }
 
+        public function validateSessionAdmin() {
+            if(isset($_SESSION["email"])) {
+                echo "<script>window.location.href='".ADMINURL."/index.php'</script>";
+            } 
+        }
+
+        public function validateSessionAdminInside() {
+            if(!isset($_SESSION["email"])) {
+                echo "<script>window.location.href='".ADMINURL."/admin/login_admin.php'</script>";
+            } 
+        }
+    
+
+
+    public function insertAndGetId($query, $params = []) {
+    $stmt = $this->pdo->prepare($query);
+    $stmt->execute($params);
+    return $this->pdo->lastInsertId();
+    }
+}
 

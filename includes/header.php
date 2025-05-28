@@ -3,6 +3,7 @@
     $app->startingSession();
 ?>
     <?php define("APPURL", "http://localhost/restaurants"); ?>
+    <?php define("APPIMG", "http://localhost/restaurants/admin_panel/foods_admin/foods_images"); ?>
 
 
 
