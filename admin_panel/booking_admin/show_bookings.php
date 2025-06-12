@@ -70,7 +70,7 @@ require(__DIR__ . "/../../config/config.php");
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="10" class="text-center">Không có đặt bàn nào</td>
+                                <td colspan="10" class="text-center">Không có bàn đặt nào</td>
                             </tr>
                         <?php endif; ?>
                     </tbody>

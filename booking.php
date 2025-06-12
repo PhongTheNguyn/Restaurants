@@ -50,12 +50,18 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select name="num_people" class="form-select" id="select1">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
+                                        <input 
+                                            type="number" 
+                                            name="num_people" 
+                                            class="form-control" 
+                                            id="num_people" 
+                                            min="1" 
+                                            max="20" 
+                                            value="1"
+                                            placeholder="Số người"
+                                            required
+                                        >
+                                        <label for="num_people">Số người</label>
                                     </div>
                                 </div>
                                 <div class="col-12">

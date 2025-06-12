@@ -29,7 +29,7 @@
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
                             <h1 class="display-3 text-white animated slideInLeft">Thưởng thức<br>Bữa ăn ngon của chúng tôi</h1>
-                            <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                            <p class="text-white animated slideInLeft mb-4 pb-2">Tận hưởng không gian ấm cúng và thực đơn phong phú được chế biến từ nguyên liệu tươi ngon nhất. Đội ngũ đầu bếp chuyên nghiệp của chúng tôi luôn sẵn sàng mang đến cho bạn những món ăn hấp dẫn, đậm đà hương vị Việt.</p>
                             <a href="<?php echo APPURL;?>/booking.php" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Đặt bàn</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
@@ -50,8 +50,8 @@
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-                                <h5>Master Chefs</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <h5>Đầu bếp</h5>
+                                <p>Đội ngũ đầu bếp giàu kinh nghiệm, sáng tạo trong từng món ăn, mang đến hương vị tinh tế và độc đáo.</p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
                                 <h5>Đồ ăn chất lượng</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Chúng tôi cam kết sử dụng nguyên liệu tươi sạch, đảm bảo vệ sinh và chất lượng cao trong từng món ăn.</p>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
                                 <h5>Đặt hàng online</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Tiện lợi và nhanh chóng – chỉ vài cú click để bạn có ngay bữa ăn yêu thích giao tận nơi.</p>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,9 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-headset text-primary mb-4"></i>
                                 <h5>Dịch vụ 24/7</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Luôn sẵn sàng hỗ trợ khách hàng mọi lúc, mọi nơi với thái độ thân thiện và chuyên nghiệp.
+
+</p>
                             </div>
                         </div>
                     </div>
@@ -111,9 +113,9 @@
                     <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Về chúng tôi</h5>
                         <h1 class="mb-4">Chào mừng tới Mộc Mộc</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.</p>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                        <p class="mb-4">Tại Mộc Mộc, chúng tôi tin rằng mỗi bữa ăn không chỉ là món ngon mà còn là một trải nghiệm. Với không gian ấm cúng, gần gũi thiên nhiên, Mộc Mộc mang đến cảm giác thân thuộc như đang dùng bữa tại nhà.</p>
+                        <p class="mb-4">Chúng tôi tự hào mang đến thực đơn đa dạng, phong phú với nguyên liệu tươi sạch được lựa chọn kỹ lưỡng. Đội ngũ đầu bếp tâm huyết luôn sẵn sàng phục vụ bạn bằng những món ăn đậm đà hương vị Việt.</p>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -125,7 +127,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Menu</h5>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Thực đơn</h5>
                 </div>
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
                     <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
@@ -133,8 +135,8 @@
                             <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
                                 <i class="fa fa-coffee fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Popular</small>
-                                    <h6 class="mt-n1 mb-0">Breakfast</h6>
+                                    <h6 class="mt-n1 mb-0">Bữa sáng </h6>
+                                    <small class="text-body">phổ biến</small>
                                 </div>
                             </a>
                         </li>
@@ -142,8 +144,8 @@
                             <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
                                 <i class="fa fa-hamburger fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Special</small>
-                                    <h6 class="mt-n1 mb-0">Launch</h6>
+                                    <h6 class="mt-n1 mb-0">Bữa trưa</h6>
+                                    <small class="text-body">đặc sắc</small>
                                 </div>
                             </a>
                         </li>
@@ -151,8 +153,8 @@
                             <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
                                 <i class="fa fa-utensils fa-2x text-primary"></i>
                                 <div class="ps-3">
-                                    <small class="text-body">Lovely</small>
-                                    <h6 class="mt-n1 mb-0">Dinner</h6>
+                                    <h6 class="mt-n1 mb-0">Bữa tối</h6>
+                                    <small class="text-body">ấm cúng</small>
                                 </div>
                             </a>
                         </li>
@@ -290,8 +292,8 @@
         <div class="container-xxl pt-5 pb-3">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
-                    <h1 class="mb-5">Our Master Chefs</h1>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Đội ngũ Bếp trưởng</h5>
+                    <h1 class="mb-5">Tài năng của Chúng tôi</h1>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -299,7 +301,7 @@
                             <div class="rounded-circle overflow-hidden m-4">
                                 <img class="img-fluid" src="img/team-1.jpg" alt="">
                             </div>
-                            <h5 class="mb-0">Full Name</h5>
+                            <h5 class="mb-0">Họ và tên</h5>
                             <small>Designation</small>
                             <div class="d-flex justify-content-center mt-3">
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -313,8 +315,8 @@
                             <div class="rounded-circle overflow-hidden m-4">
                                 <img class="img-fluid" src="img/team-2.jpg" alt="">
                             </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
+                            <h5 class="mb-0">Họ và tên</h5>
+                            <small>Chức danh</small>
                             <div class="d-flex justify-content-center mt-3">
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -327,8 +329,8 @@
                             <div class="rounded-circle overflow-hidden m-4">
                                 <img class="img-fluid" src="img/team-3.jpg" alt="">
                             </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
+                            <h5 class="mb-0">Họ và tên</h5>
+                            <small>Chức danh</small>
                             <div class="d-flex justify-content-center mt-3">
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -341,8 +343,8 @@
                             <div class="rounded-circle overflow-hidden m-4">
                                 <img class="img-fluid" src="img/team-4.jpg" alt="">
                             </div>
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
+                            <h5 class="mb-0">Họ và tên</h5>
+                            <small>Chức danh</small>
                             <div class="d-flex justify-content-center mt-3">
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>

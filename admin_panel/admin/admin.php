@@ -21,7 +21,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">admin name</th>
+                            <th scope="col">Tên admin</th>
                             <th scope="col">email</th>
                         </tr>
                     </thead>

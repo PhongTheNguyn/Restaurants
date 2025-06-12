@@ -35,9 +35,10 @@
                     <div class="form-outline mb-4">
                         <select name="status" class="form-control">
                             <option selected>Chọn trạng thái</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Confirmed">Confirmed</option>
-                            <option value="Done">Done</option>
+                            <option value="Đang chờ đợi">Chờ đợi</option>
+                            <option value="Đã xác nhận">Xác nhận</option>
+                            <option value="Hoàn thành">Hoàn thành</option>
+                            <option value="Hủy">Hủy</option>
                         </select>
                     </div>
                     <button name="submit" type="submit" class="btn btn-primary">Cập nhật</button>

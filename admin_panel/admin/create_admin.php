@@ -37,7 +37,7 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title mb-5 d-inline">Create Admin</h5>
+                <h5 class="card-title mb-5 d-inline">Tạo admin mới</h5>
                 <form action="create_admin.php" method="POST" enctype="multipart/form-data">
                     <div class="form-outline mb-4">
                         <input type="text" class="form-control" id="form2Example1" placeholder="Admin Name" name="admin_name" required>
@@ -48,7 +48,7 @@
                     <div class="form-outline mb-4">
                         <input type="password" class="form-control" id="form2Example1" placeholder="Password" name="password" required>
                     </div>
-                    <button name="submit" type="submit" class="btn btn-primary">Create</button>
+                    <button name="submit" type="submit" class="btn btn-primary">Tạo</button>
                 </form>
                 
             </div>

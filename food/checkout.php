@@ -20,6 +20,7 @@ if (isset($_POST["submit"])) {
     $phone_number = $_POST["phone_number"];
     $address = $_POST["address"];
     $detail = $_POST["detail"];
+    $user_id = $_SESSION["user_id"]; 
     $payment_method = isset($_POST["payment_method"]) ? $_POST["payment_method"] : "Tiền mặt";
     $total_price = $app->selectOne("SELECT SUM(price * quantity) AS total FROM cart WHERE user_id = :user_id", [':user_id' => $user_id])->total;
     if ($total_price === null) $total_price = 0;

@@ -3,7 +3,6 @@
 <?php require (__DIR__ ."/../includes/header.php"); ?>
 <?php 
 
-$success = false;
 
 
 if(isset($_GET['id'])) {
@@ -49,7 +48,9 @@ if(isset($_GET['id'])) {
                 ],
                 null
             );
-            $success = true;
+
+            header("Location: add-cart.php?id=$item_id&success=1");
+            exit;
         } else {
             // Nếu chưa có, thêm mới
             $query = "INSERT INTO cart (item_id, name, price, image, user_id, quantity) VALUES (:item_id, :name, :price, :image, :user_id, :quantity)";
@@ -62,7 +63,8 @@ if(isset($_GET['id'])) {
                 ":quantity"=> $quantity
             ];
             $app->insert($query, $arr, null);
-            $success = true;
+            header("Location: add-cart.php?id=$item_id&success=1");
+            exit;
         }
     }
 
@@ -70,7 +72,7 @@ if(isset($_GET['id'])) {
     echo "<script>window.location.href='".APPURL."/404.php'</script>";
 }
 
-
+$success = (isset($_GET['success']) && $_GET['success'] == 1);
 ?>
 
 <div class="container-fluid py-5 bg-dark hero-header mb-5">

@@ -80,9 +80,13 @@
 <p style="margin-left: -7px" class="w-19 py-3 ps-4 pr-5" type="text">
     Tổng: <?php echo number_format($total); ?> VNĐ
 </p>
+<?php if (!empty($cart_items) && count($cart_items) > 0): ?>
 <form method="POST" action="cart.php">
     <button name="submit" type="submit" class="btn btn-primary py-2 top-0 end-0 mt-2 me-2">Thanh toán</button>
 </form>
+<?php else: ?>
+    <p class="text-center">Cần ít nhất 1 món để có thể thanh toán</p>
+<?php endif; ?>
     </div>
 </div>
 

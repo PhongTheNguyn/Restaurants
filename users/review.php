@@ -41,31 +41,28 @@
 
         <!-- Reservation Start -->
         <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <img src="./img/video.jpg" class="h-100" alt="">
-                </div>
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Đánh giá</h5>
-                        <h1 class="text-white mb-4">Đánh giá</h1>
-                        <form method="POST" action="review.php">
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea name="review" class="form-control" placeholder="Viết đánh giá" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Viết đánh giá</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button name="submit" class="btn btn-primary w-100 py-3" type="submit">Đăng</button>
-                                </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8 bg-dark d-flex align-items-center rounded">
+            <div class="p-5 wow fadeInUp w-100" data-wow-delay="0.2s">
+                <h5 class="section-title ff-secondary text-start text-primary fw-normal">Đánh giá</h5>
+                <h1 class="text-white mb-4">Đánh giá</h1>
+                <form method="POST" action="review.php">
+                    <div class="g-3">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea name="review" class="form-control" placeholder="Viết đánh giá" id="message" style="height: 100px"></textarea>
+                                <label for="message">Viết đánh giá</label>
                             </div>
-                        </form>
+                        </div>
+                        <div class="col-12">
+                            <button name="submit" class="btn btn-primary w-100 py-3" type="submit">Đăng</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
+</div>
 
     
         <!-- Reservation Start -->

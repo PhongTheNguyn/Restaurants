@@ -65,10 +65,10 @@ if ($search_phone !== '') {
                                             <a href="detail_orders.php?id=<?php echo $order->id;?>" class="btn btn-primary">Chi tiết</a>
                                         </td>
                                         <td>
-                                            <a href="status.php?id=<?php echo $order->id;?>" class="btn btn-primary">Status</a>
+                                            <a href="status.php?id=<?php echo $order->id;?>" class="btn btn-primary">Trạng thái</a>
                                         </td>
                                         <td>
-                                            <a href="delete_orders.php?id=<?php echo $order->id;?>" class="btn btn-danger text-center">Delete</a>
+                                            <a href="delete_orders.php?id=<?php echo $order->id;?>" class="btn btn-danger text-center">Xóa</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

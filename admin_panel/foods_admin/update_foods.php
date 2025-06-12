@@ -81,9 +81,9 @@ if (isset($_POST['submit'])) {
                     <div class="mb-3">
                         <label>Loại bữa ăn</label>
                         <select name="meal_id" class="form-control" required>
-                            <option value="1" <?php if($food->meal_id == 1) echo 'selected'; ?>>Breakfast</option>
-                            <option value="2" <?php if($food->meal_id == 2) echo 'selected'; ?>>Lunch</option>
-                            <option value="3" <?php if($food->meal_id == 3) echo 'selected'; ?>>Dinner</option>
+                            <option value="1" <?php if($food->meal_id == 1) echo 'selected'; ?>>Bữa sáng</option>
+                            <option value="2" <?php if($food->meal_id == 2) echo 'selected'; ?>>Bữa trưa</option>
+                            <option value="3" <?php if($food->meal_id == 3) echo 'selected'; ?>>Bữa tối</option>
                         </select>
                     </div>
                     <div class="mb-3">

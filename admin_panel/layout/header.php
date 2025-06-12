@@ -20,7 +20,7 @@
         <!-- Top Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo ADMINURL; ?>">LOGO</a>
+                <a class="navbar-brand" href="<?php echo ADMINURL; ?>">Admin Mộc Mộc Quán</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -29,7 +29,7 @@
                     <?php if (isset($_SESSION['email'])): ?>
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a href="<?php echo ADMINURL; ?>" class="nav-link">Home</a>
+                                <a href="<?php echo ADMINURL; ?>" class="nav-link">Trang chủ</a>
                             </li>
                             <li class="nav-item">
                                 <a href="<?php echo ADMINURL; ?>/admin/admin.php" class="nav-link">Admin</a>
@@ -38,10 +38,13 @@
                                 <a href="<?php echo ADMINURL; ?>/order_admin/orders_admin.php" class="nav-link">Orders</a>
                             </li>    
                             <li class="nav-item">
-                                <a href="<?php echo ADMINURL; ?>/foods_admin/show_foods.php" class="nav-link">Foods</a>
+                                <a href="<?php echo ADMINURL; ?>/foods_admin/show_foods.php" class="nav-link">Thực phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo ADMINURL; ?>/booking_admin/show_bookings.php" class="nav-link">Bookings</a>
+                                <a href="<?php echo ADMINURL; ?>/booking_admin/show_bookings.php" class="nav-link">Bàn đặt</a>
+                            </li>    
+                            <li class="nav-item">
+                                <a href="<?php echo ADMINURL; ?>/feelback/feelback.php" class="nav-link">Feedback</a>
                             </li>    
                         </ul>
                     <?php endif; ?>
@@ -49,7 +52,7 @@
                     <ul class="navbar-nav ms-auto">
                         <?php if (!isset($_SESSION['email'])): ?>
                             <li class="nav-item">
-                                <a href="<?php echo ADMINURL; ?>/admin/login_admin.php" class="nav-link">Login</a>
+                                <a href="<?php echo ADMINURL; ?>/admin/login_admin.php" class="nav-link">Đăng nhập</a>
                             </li>
                         <?php else: ?>
                             <li class="nav-item dropdown">
@@ -57,7 +60,7 @@
                                     <?php echo htmlspecialchars($_SESSION['email']); ?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                    <li><a class="dropdown-item" href="<?php echo ADMINURL; ?>/admin/logout_admin.php">Logout</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo ADMINURL; ?>/admin/logout_admin.php">Đăng xuất</a></li>
                                 </ul>
                             </li>
                         <?php endif; ?>

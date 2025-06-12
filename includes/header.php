@@ -77,8 +77,8 @@
                                 <?php echo $_SESSION['username']; ?>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item" href="<?php echo APPURL;?>/users/bookings.php">Booking</a></li>
-                                <li><a class="dropdown-item" href="<?php echo APPURL;?>/users/orders.php">Order</a></li>
+                                <li><a class="dropdown-item" href="<?php echo APPURL;?>/users/bookings.php">Lịch sử đặt bàn</a></li>
+                                <li><a class="dropdown-item" href="<?php echo APPURL;?>/users/orders.php">Lịch sử đặt hàng</a></li>
                                 <li><a class="dropdown-item" href="<?php echo APPURL; ?>/auth/Logout.php">Đăng xuất</a></li>
                             </ul>
                         </li>
